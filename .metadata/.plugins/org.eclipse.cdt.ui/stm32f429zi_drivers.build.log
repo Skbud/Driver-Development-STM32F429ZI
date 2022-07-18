@@ -1,0 +1,10 @@
+11:02:00 **** Clean-only build of configuration Debug for project stm32f429zi_drivers ****
+make -j12 clean 
+rm -rf ./Startup/startup_stm32f429zitx.d ./Startup/startup_stm32f429zitx.o
+rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf ./Drivers/Src/stm32f429zi_gpio_driver.d ./Drivers/Src/stm32f429zi_gpio_driver.o ./Drivers/Src/stm32f429zi_gpio_driver.su ./Drivers/Src/stm32f429zi_i2c_driver.d ./Drivers/Src/stm32f429zi_i2c_driver.o ./Drivers/Src/stm32f429zi_i2c_driver.su ./Drivers/Src/stm32f429zi_spi_driver.d ./Drivers/Src/stm32f429zi_spi_driver.o ./Drivers/Src/stm32f429zi_spi_driver.su
+rm -rf default.size.stdout stm32f429zi_drivers.elf stm32f429zi_drivers.list stm32f429zi_drivers.map
+ 
+
+11:02:00 Build Finished. 0 errors, 0 warnings. (took 313ms)
+

@@ -1,0 +1,12 @@
+2022-07-18 10:09:00,129 [INFO] Activator:177 - 
+
+
+2022-07-18 10:09:00,145 [INFO] Activator:178 - !SESSION log4j initialized
+2022-07-18 10:09:02,270 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-07-18 10:50:26,296 [INFO] Activator:177 - 
+
+
+2022-07-18 10:50:26,296 [INFO] Activator:178 - !SESSION log4j initialized
+2022-07-18 10:50:29,983 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-07-18 10:51:39,541 [INFO] RetryExec:97 - I/O exception (java.net.SocketException) caught when processing request to {}->http://eclipse-color-theme.github.io:80: Socket operation on nonsocket: configureBlocking
+2022-07-18 10:51:39,588 [INFO] RetryExec:113 - Retrying request to {}->http://eclipse-color-theme.github.io:80
