@@ -2,11 +2,15 @@
  * stm32f429zi_i2c_driver.c
  *
  *  Created on: 13-Jul-2022
- *      Author: pc
+ *      Author: Sanjay
  */
 
 #include "STM32F429ZI.h"
 #include "stm32f429zi_I2C_driver.h"
+static void 	I2C_ExecuteAddressPhase(I2C_Reg_Def_t	*pI2Cx, uint8_t SlaveAddr);
+static void I2C_GenerateStartCondition(I2C_Reg_Def_t	*pI2Cx);
+static void I2C_ClearADDRFlag(I2C_Reg_Def_t	*pI2Cx);
+static void I2C_GenerateStopCondition(I2C_Reg_Def_t	*pI2Cx);
 uint16_t AHB_PreScalar[8]={2,4,8,16,64,128,256,512};
 uint16_t APB1_PreScalar[4]={2,4,8,16};
 /***********************************************************************************************
@@ -61,7 +65,10 @@ uint32_t RCC_GetPCLK1Value(void){
  */
 
 uint8_t I2C_GetFlagStatus(I2C_Reg_Def_t	*pI2Cx, uint32_t FlagName){
-
+	if(pI2Cx->CR1	&	FlagName){
+		return FLAG_SET;
+	}
+	return FLAG_RESET;
 }
 /***********************************************************************************************
  * @Function:							-I2C_PeriClockControl
@@ -127,7 +134,7 @@ void I2C_Init(I2C_Handle_t *pI2CHandle){
 	//Store the device address(when working in slave mode)
 	tempreg=0;
 	tempreg |=pI2CHandle->I2C_Config.I2CDeviceAddress<<I2C_OAR1_ADD1;
-	tempreg	|=(1<<14)
+	tempreg	|=(1<<14);
 	pI2CHandle->pI2Cx->OAR1=tempreg;
 
 	//CCR Calculation
@@ -141,8 +148,14 @@ void I2C_Init(I2C_Handle_t *pI2CHandle){
 		//Fast mode
 		tempreg	|=(1<<15);
 		tempreg	|=(pI2CHandle->I2C_Config.I2C_FMDutyCycle<<14);
-		if(pI)
+		if(pI2CHandle->I2C_Config.I2C_FMDutyCycle==I2C_FM_DUTY_2){
+			ccr_value=(RCC_GetPCLK1Value()/(3*pI2CHandle->I2C_Config.I2C_SCLSpeed)); //Calculated according to duty cycle formula
+		}else{
+			ccr_value=(RCC_GetPCLK1Value()/(25*pI2CHandle->I2C_Config.I2C_SCLSpeed));//Calculated according to duty cycle formula
+		}
+		tempreg	|=(ccr_value		&	0xFFF);
 	}
+	pI2CHandle->pI2Cx->CCR = tempreg;
 }
 /***********************************************************************************************
  * @Function:							-I2C_DeInit
@@ -162,6 +175,63 @@ void I2C_DeInit(I2C_Reg_Def_t  	*pI2Cx){
 					}
 }
 
+
+/***********************************************************************************************
+ * @Function:							-I2C_MasterSendData
+ * @Description:						-This function will configure the interrupt on the selected I2C(This Function will configure the NVIC registers)
+ * @Parameter[pI2CHandle]				-Holds settings
+ * @Parameter[pTxBuffer]					-Holds data to be transmitted
+ * @Parameter[Len]					-Holds length of data to be transmitted
+ * @Parameter[SlaveAddr]					-Holds slave address to which data is transferred
+ * @return								-None
+ * @special note:						-None
+ */
+void I2C_MasterSendData(I2C_Handle_t *pI2CHandle, uint8_t *pTxBuffer, uint32_t Len, uint8_t SlaveAddr){
+/***********Some General steps in sending Data to slave
+ * 1.Generate Start Condition
+ * 2.Confirm that start generation is completed by checking the  SB: Start bit (Master mode) flag in SR1
+ * Note:	Until SB is cleared SCL will be stretched(pulled to low)
+ * 3.Send the address of the slave with r/nw bit set to w(0) (total 8 bits)
+ * 4.Confirm that the address phase is completed by checking ADDR(ADDR: Address sent (master mode)/matched (slave mode)) flag in SR1
+ * 5.Clear the ADDR flag according to its software sequence
+ * Note: Until ADDR is cleared SCL will be stretched to low
+ * 6.Send the data until Len becomes 0
+ * 7.When Len becomes zero wait for TXE=1(Data register empty (transmitters))  and BTF=1( Byte transfer finished)
+ * before generating STOP Condition
+ * (TXE=BTF=1 means Shift Reg and Data Reg are empty and next transmission should begin)
+ * note: when BTF=1 SCL will be stretched
+ * 8.Generate Stop condition
+ * Note: Generation of stop automatically clears BTF
+ */
+
+	//Generate Start Condition
+	I2C_GenerateStartCondition(pI2CHandle->pI2Cx);
+
+	//Confirm Completion of Start generation
+	while(!	I2C_GetFlagStatus(pI2CHandle->pI2Cx, I2C_FLAG_SB)); //Clearing SB by reading it
+
+	//Send Address with R/W bit
+	I2C_ExecuteAddressPhase(pI2CHandle->pI2Cx,SlaveAddr);
+
+	//Confirm if address phase is completed
+	I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+
+	//Send Data until Len becomes zero
+	while(Len>0)
+	{
+		while(!	I2C_GetFlagStatus(pI2CHandle->pI2Cx, I2C_FLAG_TxE)); //wait till TXE is set
+		pI2CHandle->pI2Cx->DR=	*pTxBuffer;
+		pTxBuffer++;
+		Len--;
+
+	}
+	//when Len Becomes 0 wait before TXE=BTF=1 before generate stop condition
+	while(!	I2C_GetFlagStatus(pI2CHandle->pI2Cx, I2C_FLAG_TxE));
+	while(!	I2C_GetFlagStatus(pI2CHandle->pI2Cx, I2C_FLAG_BTF));
+
+	//Generate Stop Condition
+	I2C_GenerateStopCondition(pI2CHandle->pI2Cx);
+}
 
 /***********************************************************************************************
  * @Function:							-I2C_IRQConfig
@@ -248,3 +318,37 @@ __attribute__((weak)) void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle
 
 	//This is a weak implementation . the user application may override this function.
 }
+
+/*
+ * Some helper functions
+ */
+
+static void I2C_GenerateStartCondition(I2C_Reg_Def_t	*pI2Cx){
+	pI2Cx->CR1		|=	(1<<I2C_CR1_START);
+}
+
+static void I2C_GenerateStopCondition(I2C_Reg_Def_t	*pI2Cx){
+	/*
+	 * STOP: Stop generation
+	The bit is set and cleared by software, cleared by hardware when a Stop condition is
+	detected, set by hardware when a timeout error is detected.
+	 */
+	pI2Cx->CR1		|=	(1<<I2C_CR1_STOP);
+}
+
+static void 	I2C_ExecuteAddressPhase(I2C_Reg_Def_t	*pI2Cx, uint8_t SlaveAddr){
+	SlaveAddr=SlaveAddr<<1; //Makes space for R/W bit + 7 bit address
+	SlaveAddr	&=	~(1); 	//clear the last bit(last bit 0=Write)
+	pI2Cx->DR=SlaveAddr;
+}
+
+static void I2C_ClearADDRFlag(I2C_Reg_Def_t	*pI2Cx){
+	/*
+	 * Note: ADDR Flag is cleared by software reading SR1 register followed reading SR2, or by hardware
+when PE=0.
+	 */
+uint32_t dummyRead=pI2Cx->SR1;
+ dummyRead=pI2Cx->CR2;
+(void)dummyRead; //To overcome unused variable warning
+}
+

@@ -1252,3 +1252,45 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-07-18 11:01:55.527
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-07-25 15:16:54.622 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-07-25 15:17:15.670
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-07-25 15:17:15.767
+!MESSAGE Log4j initialized with config file C:\Users\pc\Documents\GitHub\Driver-Development-STM32F429ZI\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-07-25 15:17:22.713
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-25 15:17:45.460
+!MESSAGE Using unsafe http transport to retrieve http://eclipse-color-theme.github.io/update/, see CVE-2021-41033. Consider using https instead.
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-07-25 15:18:50.708
+!MESSAGE Indexed 'stm32f429zi_drivers' (6 sources, 57 headers) in 1.08 sec: 2,332 declarations; 4,623 references; 0 unresolved inclusions; 4 syntax errors; 2 unresolved names (0.029%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-07-25 15:19:32.194
+!MESSAGE Indexed 'stm32f429zi_drivers' (6 sources, 57 headers) in 0.374 sec: 2,332 declarations; 4,623 references; 0 unresolved inclusions; 4 syntax errors; 2 unresolved names (0.029%)
+!SESSION 2022-07-25 15:22:32.916 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-07-25 15:22:39.102
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-07-25 15:22:39.168
+!MESSAGE Log4j initialized with config file C:\Users\pc\Documents\GitHub\Driver-Development-STM32F429ZI\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-07-25 15:22:44.536
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2022-07-25 15:23:06.763
+!MESSAGE Using unsafe http transport to retrieve http://eclipse-color-theme.github.io/update/, see CVE-2021-41033. Consider using https instead.
