@@ -11,8 +11,8 @@ static void 	I2C_ExecuteAddressPhase(I2C_Reg_Def_t	*pI2Cx, uint8_t SlaveAddr);
 static void I2C_ExecuteAddressPhaseWrite(I2C_Reg_Def_t *pI2Cx, uint8_t SlaveAddr);
 static void I2C_ExecuteAddressPhaseRead(I2C_Reg_Def_t *pI2Cx, uint8_t SlaveAddr);
 static void I2C_GenerateStartCondition(I2C_Reg_Def_t	*pI2Cx);
-//static void I2C_ClearADDRFlag(I2C_Reg_Def_t	*pI2Cx);
-static void I2C_ClearADDRFlag(I2C_Handle_t  *pI2CHandle);
+static void I2C_ClearADDRFlag(I2C_Reg_Def_t	*pI2Cx);
+static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
 static void I2C_GenerateStopCondition(I2C_Reg_Def_t	*pI2Cx);
 static void I2C_MasterHandleRXNEInterrupt(I2C_Handle_t *pI2CHandle );
 static void I2C_MasterHandleTXEInterrupt(I2C_Handle_t *pI2CHandle );
@@ -34,9 +34,6 @@ static void I2C_ExecuteAddressPhaseRead(I2C_Reg_Def_t *pI2Cx, uint8_t SlaveAddr)
 	SlaveAddr |= 1; //SlaveAddr is Slave address + r/nw bit=1
 	pI2Cx->DR = SlaveAddr;
 }
-
-
-
 /***********************************************************************************************
  * @Function:							-RCC_GetPCLK1Value
  * @Description:						-returns the clock frequency for the peripheral
@@ -238,7 +235,7 @@ void I2C_MasterSendData(I2C_Handle_t *pI2CHandle, uint8_t *pTxBuffer, uint32_t L
 	I2C_ExecuteAddressPhase(pI2CHandle->pI2Cx,SlaveAddr);
 
 	//Confirm if address phase is completed
-	I2C_ClearADDRFlag(pI2CHandle);
+	I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
 
 	//Send Data until Len becomes zero
 	while(Len>0)
@@ -460,6 +457,15 @@ static void 	I2C_ExecuteAddressPhase(I2C_Reg_Def_t	*pI2Cx, uint8_t SlaveAddr){
 	pI2Cx->DR=SlaveAddr;
 }
 
+static void I2C_ClearADDRFlag(I2C_Reg_Def_t	*pI2Cx){
+	/*
+	 * Note: ADDR Flag is cleared by software reading SR1 register followed reading SR2, or by hardware
+when PE=0.
+	 */
+uint32_t dummyRead=pI2Cx->SR1;
+ dummyRead=pI2Cx->CR2;
+(void)dummyRead; //To overcome unused variable warning
+}
 
 void I2C_EV_IRQHandling(I2C_Handle_t *pI2CHandle){
 	//Interrupt handling for both master and slave mode of a device

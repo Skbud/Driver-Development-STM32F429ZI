@@ -62,27 +62,12 @@
 #define I2C_EV_DATA_REQ       8
 #define I2C_EV_DATA_RCV        9
 
-/*
- * I2C application states
- */
-#define I2C_READY 					0
-#define I2C_BUSY_IN_RX 			1
-#define I2C_BUSY_IN_TX 			2
-
-#define I2C_DISABLE_SR  	RESET
-#define I2C_ENABLE_SR   	SET
 typedef struct
 {
 	uint32_t	I2C_SCLSpeed;
 	uint8_t		I2CDeviceAddress;	//address of the device when working as slave(USER NEED TO SET THIS)
 	uint8_t		I2C_ACKControl;		//Acknowledge control
 	uint16_t	I2C_FMDutyCycle;	//Duty cycle when working in Fast mode
-
-}I2C_Config_t;
-
-typedef struct
-{	I2C_Reg_Def_t		*pI2Cx;
-	I2C_Config_t		I2C_Config;
 	uint8_t 		*pTxBuffer; /* !< To store the app. Tx buffer address > */
 	uint8_t 		*pRxBuffer;	/* !< To store the app. Rx buffer address > */
 	uint32_t 		TxLen;		/* !< To store Tx len > */
@@ -91,6 +76,11 @@ typedef struct
 	uint8_t 		DevAddr;	/* !< To store slave/device address > */
 	uint32_t        RxSize;		/* !< To store Rx size  > */
 	uint8_t         Sr;			/* !< To store repeated start value  > */
+}I2C_Config_t;
+
+typedef struct
+{	I2C_Reg_Def_t		*pI2Cx;
+	I2C_Config_t		I2C_Config;
 }I2C_Handle_t;
 
 /****************************************************************************************************************************************************************
@@ -115,9 +105,6 @@ uint8_t I2C_GetFlagStatus(I2C_Reg_Def_t	*pI2Cx, uint32_t FlagName);
 void I2C_PeripheralControl(I2C_Reg_Def_t *pI2Cx, uint8_t EnOrDi);
 
 void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle,uint8_t AppEv); //Application Call back
-void I2C_ManageAcking(I2C_Reg_Def_t *pI2Cx, uint8_t EnorDi);
-void I2C_CloseReceiveData(I2C_Handle_t *pI2CHandle);
-void I2C_CloseSendData(I2C_Handle_t *pI2CHandle);
 #endif /* STM32F429ZI_I2C_DRIVER_H_ */
 
 

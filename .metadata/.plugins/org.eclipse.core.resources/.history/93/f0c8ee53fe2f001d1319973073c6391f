@@ -69,8 +69,7 @@
 #define I2C_BUSY_IN_RX 			1
 #define I2C_BUSY_IN_TX 			2
 
-#define I2C_DISABLE_SR  	RESET
-#define I2C_ENABLE_SR   	SET
+
 typedef struct
 {
 	uint32_t	I2C_SCLSpeed;
@@ -115,9 +114,6 @@ uint8_t I2C_GetFlagStatus(I2C_Reg_Def_t	*pI2Cx, uint32_t FlagName);
 void I2C_PeripheralControl(I2C_Reg_Def_t *pI2Cx, uint8_t EnOrDi);
 
 void I2C_ApplicationEventCallback(I2C_Handle_t *pI2CHandle,uint8_t AppEv); //Application Call back
-void I2C_ManageAcking(I2C_Reg_Def_t *pI2Cx, uint8_t EnorDi);
-void I2C_CloseReceiveData(I2C_Handle_t *pI2CHandle);
-void I2C_CloseSendData(I2C_Handle_t *pI2CHandle);
 #endif /* STM32F429ZI_I2C_DRIVER_H_ */
 
 

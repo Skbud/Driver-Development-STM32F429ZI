@@ -5,3 +5,1749 @@ rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.d ./Src/syscalls.o
 rm -rf ./Drivers/Src/stm32f429zi_gpio_driver.d ./Drivers/Src/stm32f429zi_gpio_driver.o ./Drivers/Src/stm32f429zi_gpio_driver.su ./Drivers/Src/stm32f429zi_i2c_driver.d ./Drivers/Src/stm32f429zi_i2c_driver.o ./Drivers/Src/stm32f429zi_i2c_driver.su ./Drivers/Src/stm32f429zi_spi_driver.d ./Drivers/Src/stm32f429zi_spi_driver.o ./Drivers/Src/stm32f429zi_spi_driver.su
 rm -rf default.size.stdout stm32f429zi_drivers.elf stm32f429zi_drivers.list stm32f429zi_drivers.map
  
+10:17:28 **** Build of configuration Debug for project stm32f429zi_drivers ****
+make -j12 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -I"C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc" -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f429zitx.d" -MT"Startup/startup_stm32f429zitx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f429zitx.o" "../Startup/startup_stm32f429zitx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c -I"C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c -I"C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c -I"C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Drivers/Src/stm32f429zi_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c -I"C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/Src/stm32f429zi_gpio_driver.d" -MT"Drivers/Src/stm32f429zi_gpio_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Src/stm32f429zi_gpio_driver.o"
+arm-none-eabi-gcc "../Drivers/Src/stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c -I"C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/Src/stm32f429zi_i2c_driver.d" -MT"Drivers/Src/stm32f429zi_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Src/stm32f429zi_i2c_driver.o"
+arm-none-eabi-gcc "../Drivers/Src/stm32f429zi_spi_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c -I"C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/Src/stm32f429zi_spi_driver.d" -MT"Drivers/Src/stm32f429zi_spi_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Src/stm32f429zi_spi_driver.o"
+../Src/main.c:22:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   22 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+../Drivers/Src/stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+../Drivers/Src/stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:279:48: error: 'I2C_FLAG_RXNE' undeclared (first use in this function); did you mean 'I2C_FLAG_RxNE'?
+  279 |    while(! I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_RXNE) );
+      |                                                ^~~~~~~~~~~~~
+      |                                                I2C_FLAG_RxNE
+../Drivers/Src/stm32f429zi_i2c_driver.c:279:48: note: each undeclared identifier is reported only once for each function it appears in
+../Drivers/Src/stm32f429zi_i2c_driver.c:282:7: error: 'Sr' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |       ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:282:13: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |             ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:321:30: error: 'I2C_Config_t' has no member named 'I2C_AckControl'; did you mean 'I2C_ACKControl'?
+  321 |    if(pI2CHandle->I2C_Config.I2C_AckControl == I2C_ACK_ENABLE)
+      |                              ^~~~~~~~~~~~~~
+      |                              I2C_ACKControl
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+../Drivers/Src/stm32f429zi_i2c_driver.c:465:17: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                 ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:465:32: error: 'I2C_BUSY_IN_TX' undeclared (first use in this function)
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                                ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:467:62: error: 'I2C_Handle_t' has no member named 'DevAddr'
+  467 |     I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |                                                              ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:468:24: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                        ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:468:39: error: 'I2C_BUSY_IN_RX' undeclared (first use in this function)
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                                       ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+../Drivers/Src/stm32f429zi_i2c_driver.c:470:61: error: 'I2C_Handle_t' has no member named 'DevAddr'
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |                                                             ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:489:17: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  489 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                 ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:492:40: error: 'I2C_SR1_TXE' undeclared (first use in this function); did you mean 'I2C_SR1_TxE'?
+  492 |     if(pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE) )
+      |                                        ^~~~~~~~~~~
+      |                                        I2C_SR1_TxE
+../Drivers/Src/stm32f429zi_i2c_driver.c:495:19: error: 'I2C_Handle_t' has no member named 'TxLen'
+  495 |      if(pI2CHandle->TxLen == 0 )
+      |                   ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:498:20: error: 'I2C_Handle_t' has no member named 'Sr'
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                    ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:498:28: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                            ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+../Drivers/Src/stm32f429zi_i2c_driver.c:510:24: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  510 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                        ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:541:18: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  541 |     if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                  ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:556:44: error: 'I2C_SR1_RXNE' undeclared (first use in this function); did you mean 'I2C_SR1_RxNE'?
+  556 |   temp3  = pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_RXNE);
+      |                                            ^~~~~~~~~~~~
+      |                                            I2C_SR1_RxNE
+../Drivers/Src/stm32f429zi_i2c_driver.c:566:18: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  566 |     if(pI2CHandle->TxRxState == I2C_BUSY_IN_RX)
+      |                  ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: At top level:
+../Drivers/Src/stm32f429zi_i2c_driver.c:587:1: error: expected identifier or '(' before '}' token
+  587 | }
+      | ^
+make: *** [Drivers/Src/subdir.mk:25: Drivers/Src/stm32f429zi_i2c_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+10:26:31 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Debug/Drivers/Src/stm32f429zi_i2c_driver.su deleted.
+10:26:35 **** Incremental Build of configuration Debug for project stm32f429zi_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/Src/stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c -I"C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/Src/stm32f429zi_i2c_driver.d" -MT"Drivers/Src/stm32f429zi_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Src/stm32f429zi_i2c_driver.o"
+In file included from ../Drivers/Src/stm32f429zi_i2c_driver.c:9:
+C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc/stm32f429zi_I2C_driver.h:72:13: error: duplicate member 'pTxBuffer'
+   72 |  uint8_t   *pTxBuffer; /* !< To store the app. Tx buffer address > */
+      |             ^~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+../Drivers/Src/stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+../Drivers/Src/stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:282:7: error: 'Sr' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |       ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:282:7: note: each undeclared identifier is reported only once for each function it appears in
+../Drivers/Src/stm32f429zi_i2c_driver.c:282:13: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |             ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:299:51: error: 'I2C_FLAG_RXNE' undeclared (first use in this function); did you mean 'I2C_FLAG_RxNE'?
+  299 |       while(! I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_RXNE) );
+      |                                                   ^~~~~~~~~~~~~
+      |                                                   I2C_FLAG_RxNE
+../Drivers/Src/stm32f429zi_i2c_driver.c:321:30: error: 'I2C_Config_t' has no member named 'I2C_ACKControll'; did you mean 'I2C_ACKControl'?
+  321 |    if(pI2CHandle->I2C_Config.I2C_ACKControll == I2C_ACK_ENABLE)
+      |                              ^~~~~~~~~~~~~~~
+      |                              I2C_ACKControl
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+../Drivers/Src/stm32f429zi_i2c_driver.c:465:17: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                 ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:465:32: error: 'I2C_BUSY_IN_TX' undeclared (first use in this function)
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                                ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:467:62: error: 'I2C_Handle_t' has no member named 'DevAddr'
+  467 |     I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |                                                              ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:468:24: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                        ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:468:39: error: 'I2C_BUSY_IN_RX' undeclared (first use in this function)
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                                       ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+../Drivers/Src/stm32f429zi_i2c_driver.c:470:61: error: 'I2C_Handle_t' has no member named 'DevAddr'
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |                                                             ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:489:17: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  489 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                 ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:492:40: error: 'I2C_SR1_TXE' undeclared (first use in this function); did you mean 'I2C_SR1_TxE'?
+  492 |     if(pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE) )
+      |                                        ^~~~~~~~~~~
+      |                                        I2C_SR1_TxE
+../Drivers/Src/stm32f429zi_i2c_driver.c:495:19: error: 'I2C_Handle_t' has no member named 'TxLen'
+  495 |      if(pI2CHandle->TxLen == 0 )
+      |                   ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:498:20: error: 'I2C_Handle_t' has no member named 'Sr'
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                    ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:498:28: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                            ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+../Drivers/Src/stm32f429zi_i2c_driver.c:510:24: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  510 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                        ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:541:18: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  541 |     if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                  ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:556:44: error: 'I2C_SR1_RXNE' undeclared (first use in this function); did you mean 'I2C_SR1_RxNE'?
+  556 |   temp3  = pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_RXNE);
+      |                                            ^~~~~~~~~~~~
+      |                                            I2C_SR1_RxNE
+../Drivers/Src/stm32f429zi_i2c_driver.c:566:18: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  566 |     if(pI2CHandle->TxRxState == I2C_BUSY_IN_RX)
+      |                  ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: At top level:
+../Drivers/Src/stm32f429zi_i2c_driver.c:587:1: error: expected identifier or '(' before '}' token
+  587 | }
+      | ^
+make: *** [Drivers/Src/subdir.mk:25: Drivers/Src/stm32f429zi_i2c_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+10:26:42 **** Incremental Build of configuration Debug for project stm32f429zi_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/Src/stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c -I"C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/Src/stm32f429zi_i2c_driver.d" -MT"Drivers/Src/stm32f429zi_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Src/stm32f429zi_i2c_driver.o"
+In file included from ../Drivers/Src/stm32f429zi_i2c_driver.c:9:
+C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc/stm32f429zi_I2C_driver.h:72:13: error: duplicate member 'pTxBuffer'
+   72 |  uint8_t   *pTxBuffer; /* !< To store the app. Tx buffer address > */
+      |             ^~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+../Drivers/Src/stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+../Drivers/Src/stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:282:7: error: 'Sr' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |       ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:282:7: note: each undeclared identifier is reported only once for each function it appears in
+../Drivers/Src/stm32f429zi_i2c_driver.c:282:13: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |             ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:299:51: error: 'I2C_FLAG_RXNE' undeclared (first use in this function); did you mean 'I2C_FLAG_RxNE'?
+  299 |       while(! I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_RXNE) );
+      |                                                   ^~~~~~~~~~~~~
+      |                                                   I2C_FLAG_RxNE
+../Drivers/Src/stm32f429zi_i2c_driver.c:321:30: error: 'I2C_Config_t' has no member named 'I2C_ACKControll'; did you mean 'I2C_ACKControl'?
+  321 |    if(pI2CHandle->I2C_Config.I2C_ACKControll == I2C_ACK_ENABLE)
+      |                              ^~~~~~~~~~~~~~~
+      |                              I2C_ACKControl
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+../Drivers/Src/stm32f429zi_i2c_driver.c:465:17: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                 ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:465:32: error: 'I2C_BUSY_IN_TX' undeclared (first use in this function)
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                                ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:467:62: error: 'I2C_Handle_t' has no member named 'DevAddr'
+  467 |     I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |                                                              ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:468:24: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                        ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:468:39: error: 'I2C_BUSY_IN_RX' undeclared (first use in this function)
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                                       ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+../Drivers/Src/stm32f429zi_i2c_driver.c:470:61: error: 'I2C_Handle_t' has no member named 'DevAddr'
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |                                                             ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:489:17: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  489 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                 ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:492:40: error: 'I2C_SR1_TXE' undeclared (first use in this function); did you mean 'I2C_SR1_TxE'?
+  492 |     if(pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE) )
+      |                                        ^~~~~~~~~~~
+      |                                        I2C_SR1_TxE
+../Drivers/Src/stm32f429zi_i2c_driver.c:495:19: error: 'I2C_Handle_t' has no member named 'TxLen'
+  495 |      if(pI2CHandle->TxLen == 0 )
+      |                   ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:498:20: error: 'I2C_Handle_t' has no member named 'Sr'
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                    ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:498:28: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                            ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+../Drivers/Src/stm32f429zi_i2c_driver.c:510:24: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  510 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                        ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:541:18: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  541 |     if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                  ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:556:44: error: 'I2C_SR1_RXNE' undeclared (first use in this function); did you mean 'I2C_SR1_RxNE'?
+  556 |   temp3  = pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_RXNE);
+      |                                            ^~~~~~~~~~~~
+      |                                            I2C_SR1_RxNE
+../Drivers/Src/stm32f429zi_i2c_driver.c:566:18: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  566 |     if(pI2CHandle->TxRxState == I2C_BUSY_IN_RX)
+      |                  ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: At top level:
+../Drivers/Src/stm32f429zi_i2c_driver.c:587:1: error: expected identifier or '(' before '}' token
+  587 | }
+      | ^
+make: *** [Drivers/Src/subdir.mk:25: Drivers/Src/stm32f429zi_i2c_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+10:27:36 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Debug/Drivers/Src/stm32f429zi_i2c_driver.su deleted.
+10:27:40 **** Incremental Build of configuration Debug for project stm32f429zi_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/Src/stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c -I"C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/Src/stm32f429zi_i2c_driver.d" -MT"Drivers/Src/stm32f429zi_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Src/stm32f429zi_i2c_driver.o"
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+../Drivers/Src/stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+../Drivers/Src/stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:282:7: error: 'Sr' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |       ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:282:7: note: each undeclared identifier is reported only once for each function it appears in
+../Drivers/Src/stm32f429zi_i2c_driver.c:282:13: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |             ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:299:51: error: 'I2C_FLAG_RXNE' undeclared (first use in this function); did you mean 'I2C_FLAG_RxNE'?
+  299 |       while(! I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_RXNE) );
+      |                                                   ^~~~~~~~~~~~~
+      |                                                   I2C_FLAG_RxNE
+../Drivers/Src/stm32f429zi_i2c_driver.c:321:30: error: 'I2C_Config_t' has no member named 'I2C_ACKControll'; did you mean 'I2C_ACKControl'?
+  321 |    if(pI2CHandle->I2C_Config.I2C_ACKControll == I2C_ACK_ENABLE)
+      |                              ^~~~~~~~~~~~~~~
+      |                              I2C_ACKControl
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+../Drivers/Src/stm32f429zi_i2c_driver.c:465:17: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                 ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:465:32: error: 'I2C_BUSY_IN_TX' undeclared (first use in this function)
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                                ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:467:62: error: 'I2C_Handle_t' has no member named 'DevAddr'
+  467 |     I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |                                                              ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:468:24: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                        ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:468:39: error: 'I2C_BUSY_IN_RX' undeclared (first use in this function)
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                                       ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+../Drivers/Src/stm32f429zi_i2c_driver.c:470:61: error: 'I2C_Handle_t' has no member named 'DevAddr'
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |                                                             ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:489:17: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  489 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                 ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:492:40: error: 'I2C_SR1_TXE' undeclared (first use in this function); did you mean 'I2C_SR1_TxE'?
+  492 |     if(pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE) )
+      |                                        ^~~~~~~~~~~
+      |                                        I2C_SR1_TxE
+../Drivers/Src/stm32f429zi_i2c_driver.c:495:19: error: 'I2C_Handle_t' has no member named 'TxLen'
+  495 |      if(pI2CHandle->TxLen == 0 )
+      |                   ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:498:20: error: 'I2C_Handle_t' has no member named 'Sr'
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                    ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:498:28: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                            ^~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+../Drivers/Src/stm32f429zi_i2c_driver.c:510:24: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  510 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                        ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:541:18: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  541 |     if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                  ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:556:44: error: 'I2C_SR1_RXNE' undeclared (first use in this function); did you mean 'I2C_SR1_RxNE'?
+  556 |   temp3  = pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_RXNE);
+      |                                            ^~~~~~~~~~~~
+      |                                            I2C_SR1_RxNE
+../Drivers/Src/stm32f429zi_i2c_driver.c:566:18: error: 'I2C_Handle_t' has no member named 'TxRxState'
+  566 |     if(pI2CHandle->TxRxState == I2C_BUSY_IN_RX)
+      |                  ^~
+../Drivers/Src/stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: At top level:
+../Drivers/Src/stm32f429zi_i2c_driver.c:587:1: error: expected identifier or '(' before '}' token
+  587 | }
+      | ^
+make: *** [Drivers/Src/subdir.mk:25: Drivers/Src/stm32f429zi_i2c_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+10:28:56 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Debug/Drivers/Src/stm32f429zi_i2c_driver.su deleted.
+10:29:00 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:7: error: 'Sr' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |       ^~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:7: note: each undeclared identifier is reported only once for each function it appears in
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:13: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |             ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:299:51: error: 'I2C_FLAG_RXNE' undeclared (first use in this function); did you mean 'I2C_FLAG_RxNE'?
+  299 |       while(! I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_RXNE) );
+      |                                                   ^~~~~~~~~~~~~
+      |                                                   I2C_FLAG_RxNE
+..\Drivers\Src\stm32f429zi_i2c_driver.c:321:30: error: 'I2C_Config_t' has no member named 'I2C_ACKControll'; did you mean 'I2C_ACKControl'?
+  321 |    if(pI2CHandle->I2C_Config.I2C_ACKControll == I2C_ACK_ENABLE)
+      |                              ^~~~~~~~~~~~~~~
+      |                              I2C_ACKControl
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:465:32: error: 'I2C_BUSY_IN_TX' undeclared (first use in this function)
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                                ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:468:39: error: 'I2C_BUSY_IN_RX' undeclared (first use in this function)
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                                       ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:492:40: error: 'I2C_SR1_TXE' undeclared (first use in this function); did you mean 'I2C_SR1_TxE'?
+  492 |     if(pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE) )
+      |                                        ^~~~~~~~~~~
+      |                                        I2C_SR1_TxE
+..\Drivers\Src\stm32f429zi_i2c_driver.c:498:28: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                            ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+..\Drivers\Src\stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:556:44: error: 'I2C_SR1_RXNE' undeclared (first use in this function); did you mean 'I2C_SR1_RxNE'?
+  556 |   temp3  = pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_RXNE);
+      |                                            ^~~~~~~~~~~~
+      |                                            I2C_SR1_RxNE
+..\Drivers\Src\stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:587:1: error: expected identifier or '(' before '}' token
+  587 | }
+      | ^
+10:31:35 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+10:31:38 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:7: error: 'Sr' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |       ^~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:7: note: each undeclared identifier is reported only once for each function it appears in
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:13: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |             ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:321:30: error: 'I2C_Config_t' has no member named 'I2C_ACKControll'; did you mean 'I2C_ACKControl'?
+  321 |    if(pI2CHandle->I2C_Config.I2C_ACKControll == I2C_ACK_ENABLE)
+      |                              ^~~~~~~~~~~~~~~
+      |                              I2C_ACKControl
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:465:32: error: 'I2C_BUSY_IN_TX' undeclared (first use in this function)
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                                ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:468:39: error: 'I2C_BUSY_IN_RX' undeclared (first use in this function)
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                                       ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:492:40: error: 'I2C_SR1_TXE' undeclared (first use in this function); did you mean 'I2C_SR1_TxE'?
+  492 |     if(pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE) )
+      |                                        ^~~~~~~~~~~
+      |                                        I2C_SR1_TxE
+..\Drivers\Src\stm32f429zi_i2c_driver.c:498:28: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                            ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+..\Drivers\Src\stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:587:1: error: expected identifier or '(' before '}' token
+  587 | }
+      | ^
+10:32:28 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+10:32:30 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:7: error: 'Sr' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |       ^~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:7: note: each undeclared identifier is reported only once for each function it appears in
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:13: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |             ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:321:30: error: 'I2C_Config_t' has no member named 'I2C_ACKControll'; did you mean 'I2C_ACKControl'?
+  321 |    if(pI2CHandle->I2C_Config.I2C_ACKControll == I2C_ACK_ENABLE)
+      |                              ^~~~~~~~~~~~~~~
+      |                              I2C_ACKControl
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:465:32: error: 'I2C_BUSY_IN_TX' undeclared (first use in this function)
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                                ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:468:39: error: 'I2C_BUSY_IN_RX' undeclared (first use in this function)
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                                       ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:492:40: error: 'I2C_SR1_TXE' undeclared (first use in this function); did you mean 'I2C_SR1_TxE'?
+  492 |     if(pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE) )
+      |                                        ^~~~~~~~~~~
+      |                                        I2C_SR1_TxE
+..\Drivers\Src\stm32f429zi_i2c_driver.c:498:28: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                            ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+..\Drivers\Src\stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10:39:07 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+10:39:15 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:13: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |             ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:13: note: each undeclared identifier is reported only once for each function it appears in
+..\Drivers\Src\stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:321:30: error: 'I2C_Config_t' has no member named 'I2C_ACKControll'; did you mean 'I2C_ACKControl'?
+  321 |    if(pI2CHandle->I2C_Config.I2C_ACKControll == I2C_ACK_ENABLE)
+      |                              ^~~~~~~~~~~~~~~
+      |                              I2C_ACKControl
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:465:32: error: 'I2C_BUSY_IN_TX' undeclared (first use in this function)
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                                ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:468:39: error: 'I2C_BUSY_IN_RX' undeclared (first use in this function)
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                                       ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:492:40: error: 'I2C_SR1_TXE' undeclared (first use in this function); did you mean 'I2C_SR1_TxE'?
+  492 |     if(pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE) )
+      |                                        ^~~~~~~~~~~
+      |                                        I2C_SR1_TxE
+..\Drivers\Src\stm32f429zi_i2c_driver.c:498:28: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                            ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+..\Drivers\Src\stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10:40:11 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+10:40:19 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:13: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |             ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:13: note: each undeclared identifier is reported only once for each function it appears in
+..\Drivers\Src\stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:465:32: error: 'I2C_BUSY_IN_TX' undeclared (first use in this function)
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                                ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:468:39: error: 'I2C_BUSY_IN_RX' undeclared (first use in this function)
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                                       ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:492:40: error: 'I2C_SR1_TXE' undeclared (first use in this function); did you mean 'I2C_SR1_TxE'?
+  492 |     if(pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE) )
+      |                                        ^~~~~~~~~~~
+      |                                        I2C_SR1_TxE
+..\Drivers\Src\stm32f429zi_i2c_driver.c:498:28: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                            ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+..\Drivers\Src\stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10:40:50 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+10:40:53 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:13: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |             ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:13: note: each undeclared identifier is reported only once for each function it appears in
+..\Drivers\Src\stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:465:32: error: 'I2C_BUSY_IN_TX' undeclared (first use in this function)
+  465 |    if(pI2CHandle->TxRxState == I2C_BUSY_IN_TX)
+      |                                ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:468:39: error: 'I2C_BUSY_IN_RX' undeclared (first use in this function)
+  468 |    }else if (pI2CHandle->TxRxState == I2C_BUSY_IN_RX )
+      |                                       ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:492:40: error: 'I2C_SR1_TXE' undeclared (first use in this function); did you mean 'I2C_SR1_TxE'?
+  492 |     if(pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE) )
+      |                                        ^~~~~~~~~~~
+      |                                        I2C_SR1_TxE
+..\Drivers\Src\stm32f429zi_i2c_driver.c:498:28: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                            ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+..\Drivers\Src\stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10:43:27 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+10:43:33 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:13: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  282 |    if(Sr == I2C_DISABLE_SR )
+      |             ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:282:13: note: each undeclared identifier is reported only once for each function it appears in
+..\Drivers\Src\stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:492:40: error: 'I2C_SR1_TXE' undeclared (first use in this function); did you mean 'I2C_SR1_TxE'?
+  492 |     if(pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE) )
+      |                                        ^~~~~~~~~~~
+      |                                        I2C_SR1_TxE
+..\Drivers\Src\stm32f429zi_i2c_driver.c:498:28: error: 'I2C_DISABLE_SR' undeclared (first use in this function)
+  498 |       if(pI2CHandle->Sr == I2C_DISABLE_SR)
+      |                            ^~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+..\Drivers\Src\stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10:44:59 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+10:45:07 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:492:40: error: 'I2C_SR1_TXE' undeclared (first use in this function); did you mean 'I2C_SR1_TxE'?
+  492 |     if(pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE) )
+      |                                        ^~~~~~~~~~~
+      |                                        I2C_SR1_TxE
+..\Drivers\Src\stm32f429zi_i2c_driver.c:492:40: note: each undeclared identifier is reported only once for each function it appears in
+..\Drivers\Src\stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+..\Drivers\Src\stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10:45:47 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+10:45:54 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+..\Drivers\Src\stm32f429zi_i2c_driver.c:532:44: error: 'I2C_SR1_TXE' undeclared (first use in this function); did you mean 'I2C_SR1_TxE'?
+  532 |   temp3  = pI2CHandle->pI2Cx->SR1 & ( 1 << I2C_SR1_TXE);
+      |                                            ^~~~~~~~~~~
+      |                                            I2C_SR1_TxE
+..\Drivers\Src\stm32f429zi_i2c_driver.c:532:44: note: each undeclared identifier is reported only once for each function it appears in
+..\Drivers\Src\stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10:46:15 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+10:46:21 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+..\Drivers\Src\stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+..\Drivers\Src\stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+12:13:34 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Debug/Drivers/Src/stm32f429zi_i2c_driver.o deleted.
+Debug/Drivers/Src/stm32f429zi_i2c_driver.su deleted.
+12:13:37 **** Incremental Build of configuration Debug for project stm32f429zi_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/Src/stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c -I"C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/Src/stm32f429zi_i2c_driver.d" -MT"Drivers/Src/stm32f429zi_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Src/stm32f429zi_i2c_driver.o"
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+../Drivers/Src/stm32f429zi_i2c_driver.c:264:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  264 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+../Drivers/Src/stm32f429zi_i2c_driver.c:273:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  273 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:276:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  276 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:293:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  293 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:12:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+   12 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+../Drivers/Src/stm32f429zi_i2c_driver.c:470:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  470 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+../Drivers/Src/stm32f429zi_i2c_driver.c:481:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  481 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:439:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  439 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:502:7: warning: implicit declaration of function 'I2C_CloseSendData'; did you mean 'I2C_MasterSendData'? [-Wimplicit-function-declaration]
+  502 |       I2C_CloseSendData(pI2CHandle);
+      |       ^~~~~~~~~~~~~~~~~
+      |       I2C_MasterSendData
+../Drivers/Src/stm32f429zi_i2c_driver.c:543:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  543 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:568:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  568 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "stm32f429zi_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\pc\Documents\GitHub\Driver-Development-STM32F429ZI\stm32f429zi_drivers\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f429zi_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f429zi_drivers.elf
+ 
+arm-none-eabi-size   stm32f429zi_drivers.elf 
+arm-none-eabi-objdump -h -S  stm32f429zi_drivers.elf  > "stm32f429zi_drivers.list"
+   text	   data	    bss	    dec	    hex	filename
+    680	      8	   1568	   2256	    8d0	stm32f429zi_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f429zi_drivers.list
+ 
+12:18:34 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Debug/Drivers/Src/stm32f429zi_i2c_driver.o deleted.
+Debug/Drivers/Src/stm32f429zi_i2c_driver.su deleted.
+12:18:37 **** Incremental Build of configuration Debug for project stm32f429zi_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/Src/stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c -I"C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/Src/stm32f429zi_i2c_driver.d" -MT"Drivers/Src/stm32f429zi_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Src/stm32f429zi_i2c_driver.o"
+In file included from ../Drivers/Src/stm32f429zi_i2c_driver.c:9:
+C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc/stm32f429zi_I2C_driver.h:118:23: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_Reg_Def_t'?
+  118 | void I2C_ManageAcking(I2C_RegDef_t *pI2Cx, uint8_t EnorDi);
+      |                       ^~~~~~~~~~~~
+      |                       I2C_Reg_Def_t
+../Drivers/Src/stm32f429zi_i2c_driver.c:11:42: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_Reg_Def_t'?
+   11 | static void I2C_ExecuteAddressPhaseWrite(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr);
+      |                                          ^~~~~~~~~~~~
+      |                                          I2C_Reg_Def_t
+../Drivers/Src/stm32f429zi_i2c_driver.c:12:41: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_Reg_Def_t'?
+   12 | static void I2C_ExecuteAddressPhaseRead(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr);
+      |                                         ^~~~~~~~~~~~
+      |                                         I2C_Reg_Def_t
+../Drivers/Src/stm32f429zi_i2c_driver.c:15:13: error: conflicting types for 'I2C_ClearADDRFlag'
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:14:13: note: previous declaration of 'I2C_ClearADDRFlag' was here
+   14 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |             ^~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_MasterSendData':
+../Drivers/Src/stm32f429zi_i2c_driver.c:220:30: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  220 |  I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+      |                    ~~~~~~~~~~^~~~~~~
+      |                              |
+      |                              I2C_Reg_Def_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:15:45: note: expected 'I2C_Handle_t *' but argument is of type 'I2C_Reg_Def_t *'
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |                               ~~~~~~~~~~~~~~^~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_MasterReceiveData':
+../Drivers/Src/stm32f429zi_i2c_driver.c:267:3: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseWrite'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  267 |   I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |   I2C_ExecuteAddressPhase
+../Drivers/Src/stm32f429zi_i2c_driver.c:276:4: warning: implicit declaration of function 'I2C_ManageAcking' [-Wimplicit-function-declaration]
+  276 |    I2C_ManageAcking(pI2CHandle->pI2Cx,I2C_ACK_DISABLE);
+      |    ^~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: At top level:
+../Drivers/Src/stm32f429zi_i2c_driver.c:442:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  442 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:15:13: note: previous declaration of 'I2C_ClearADDRFlag' was here
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+../Drivers/Src/stm32f429zi_i2c_driver.c:473:5: warning: implicit declaration of function 'I2C_ExecuteAddressPhaseRead'; did you mean 'I2C_ExecuteAddressPhase'? [-Wimplicit-function-declaration]
+  473 |     I2C_ExecuteAddressPhaseRead(pI2CHandle->pI2Cx,pI2CHandle->DevAddr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     I2C_ExecuteAddressPhase
+../Drivers/Src/stm32f429zi_i2c_driver.c:484:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  484 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:442:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  442 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:546:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  546 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:571:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  571 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: At top level:
+../Drivers/Src/stm32f429zi_i2c_driver.c:15:13: warning: 'I2C_ClearADDRFlag' used but never defined
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+make: *** [Drivers/Src/subdir.mk:25: Drivers/Src/stm32f429zi_i2c_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+12:21:33 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Debug/Drivers/Src/stm32f429zi_i2c_driver.su deleted.
+12:21:41 **** Incremental Build of configuration Debug for project stm32f429zi_drivers ****
+make -j12 all 
+arm-none-eabi-gcc "../Drivers/Src/stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c -I"C:/Users/pc/Documents/GitHub/Driver-Development-STM32F429ZI/stm32f429zi_drivers/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/Src/stm32f429zi_i2c_driver.d" -MT"Drivers/Src/stm32f429zi_i2c_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Src/stm32f429zi_i2c_driver.o"
+../Drivers/Src/stm32f429zi_i2c_driver.c:15:13: error: conflicting types for 'I2C_ClearADDRFlag'
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:14:13: note: previous declaration of 'I2C_ClearADDRFlag' was here
+   14 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |             ^~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_MasterSendData':
+../Drivers/Src/stm32f429zi_i2c_driver.c:220:30: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  220 |  I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+      |                    ~~~~~~~~~~^~~~~~~
+      |                              |
+      |                              I2C_Reg_Def_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:15:45: note: expected 'I2C_Handle_t *' but argument is of type 'I2C_Reg_Def_t *'
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |                               ~~~~~~~~~~~~~~^~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: At top level:
+../Drivers/Src/stm32f429zi_i2c_driver.c:442:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  442 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:15:13: note: previous declaration of 'I2C_ClearADDRFlag' was here
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+../Drivers/Src/stm32f429zi_i2c_driver.c:484:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  484 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+../Drivers/Src/stm32f429zi_i2c_driver.c:442:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  442 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:546:6: warning: implicit declaration of function 'I2C_MasterHandleTXEInterrupt' [-Wimplicit-function-declaration]
+  546 |      I2C_MasterHandleTXEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:571:6: warning: implicit declaration of function 'I2C_MasterHandleRXNEInterrupt' [-Wimplicit-function-declaration]
+  571 |      I2C_MasterHandleRXNEInterrupt(pI2CHandle);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c: At top level:
+../Drivers/Src/stm32f429zi_i2c_driver.c:11:13: warning: 'I2C_ExecuteAddressPhaseWrite' used but never defined
+   11 | static void I2C_ExecuteAddressPhaseWrite(I2C_Reg_Def_t *pI2Cx, uint8_t SlaveAddr);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:12:13: warning: 'I2C_ExecuteAddressPhaseRead' used but never defined
+   12 | static void I2C_ExecuteAddressPhaseRead(I2C_Reg_Def_t *pI2Cx, uint8_t SlaveAddr);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Drivers/Src/stm32f429zi_i2c_driver.c:15:13: warning: 'I2C_ClearADDRFlag' used but never defined
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+make: *** [Drivers/Src/subdir.mk:25: Drivers/Src/stm32f429zi_i2c_driver.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+12:24:03 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Debug/Drivers/Src/stm32f429zi_i2c_driver.su deleted.
+12:24:06 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:13: error: conflicting types for 'I2C_ClearADDRFlag'
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:14:13: note: previous declaration of 'I2C_ClearADDRFlag' was here
+   14 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterSendData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:222:30: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  222 |  I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+      |                    ~~~~~~~~~~^~~~~~~
+      |                              |
+      |                              I2C_Reg_Def_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:45: note: expected 'I2C_Handle_t *' but argument is of type 'I2C_Reg_Def_t *'
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |                               ~~~~~~~~~~~~~~^~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:444:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  444 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:13: note: previous declaration of 'I2C_ClearADDRFlag' was here
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:486:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  486 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:444:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  444 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:669:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  669 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:444:13: note: previous definition of 'I2C_ClearADDRFlag' was here
+  444 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:11:13: warning: 'I2C_ExecuteAddressPhaseWrite' used but never defined
+   11 | static void I2C_ExecuteAddressPhaseWrite(I2C_Reg_Def_t *pI2Cx, uint8_t SlaveAddr);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:13: warning: 'I2C_ExecuteAddressPhaseRead' used but never defined
+   12 | static void I2C_ExecuteAddressPhaseRead(I2C_Reg_Def_t *pI2Cx, uint8_t SlaveAddr);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:13: warning: 'I2C_ClearADDRFlag' used but never defined
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:17:13: warning: 'I2C_MasterHandleRXNEInterrupt' used but never defined
+   17 | static void I2C_MasterHandleRXNEInterrupt(I2C_Handle_t *pI2CHandle );
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:18:13: warning: 'I2C_MasterHandleTXEInterrupt' used but never defined
+   18 | static void I2C_MasterHandleTXEInterrupt(I2C_Handle_t *pI2CHandle );
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:669:13: warning: 'I2C_ClearADDRFlag' defined but not used [-Wunused-function]
+  669 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+12:29:38 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+12:29:43 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:13: error: conflicting types for 'I2C_ClearADDRFlag'
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:14:13: note: previous declaration of 'I2C_ClearADDRFlag' was here
+   14 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:23:42: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_Reg_Def_t'?
+   23 | static void I2C_ExecuteAddressPhaseWrite(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr)
+      |                                          ^~~~~~~~~~~~
+      |                                          I2C_Reg_Def_t
+..\Drivers\Src\stm32f429zi_i2c_driver.c:31:41: error: unknown type name 'I2C_RegDef_t'; did you mean 'I2C_Reg_Def_t'?
+   31 | static void I2C_ExecuteAddressPhaseRead(I2C_RegDef_t *pI2Cx, uint8_t SlaveAddr)
+      |                                         ^~~~~~~~~~~~
+      |                                         I2C_Reg_Def_t
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterSendData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:238:30: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  238 |  I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+      |                    ~~~~~~~~~~^~~~~~~
+      |                              |
+      |                              I2C_Reg_Def_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:45: note: expected 'I2C_Handle_t *' but argument is of type 'I2C_Reg_Def_t *'
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |                               ~~~~~~~~~~~~~~^~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:460:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  460 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:13: note: previous declaration of 'I2C_ClearADDRFlag' was here
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:502:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  502 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:460:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  460 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:685:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  685 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:460:13: note: previous definition of 'I2C_ClearADDRFlag' was here
+  460 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:11:13: warning: 'I2C_ExecuteAddressPhaseWrite' used but never defined
+   11 | static void I2C_ExecuteAddressPhaseWrite(I2C_Reg_Def_t *pI2Cx, uint8_t SlaveAddr);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:12:13: warning: 'I2C_ExecuteAddressPhaseRead' used but never defined
+   12 | static void I2C_ExecuteAddressPhaseRead(I2C_Reg_Def_t *pI2Cx, uint8_t SlaveAddr);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:13: warning: 'I2C_ClearADDRFlag' used but never defined
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:685:13: warning: 'I2C_ClearADDRFlag' defined but not used [-Wunused-function]
+  685 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+12:30:48 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+12:30:50 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:13: error: conflicting types for 'I2C_ClearADDRFlag'
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:14:13: note: previous declaration of 'I2C_ClearADDRFlag' was here
+   14 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterSendData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:238:30: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  238 |  I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+      |                    ~~~~~~~~~~^~~~~~~
+      |                              |
+      |                              I2C_Reg_Def_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:45: note: expected 'I2C_Handle_t *' but argument is of type 'I2C_Reg_Def_t *'
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |                               ~~~~~~~~~~~~~~^~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:460:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  460 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:13: note: previous declaration of 'I2C_ClearADDRFlag' was here
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:502:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  502 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:460:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  460 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:685:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  685 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:460:13: note: previous definition of 'I2C_ClearADDRFlag' was here
+  460 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:13: warning: 'I2C_ClearADDRFlag' used but never defined
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:685:13: warning: 'I2C_ClearADDRFlag' defined but not used [-Wunused-function]
+  685 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+12:32:07 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+12:32:09 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:13: error: conflicting types for 'I2C_ClearADDRFlag'
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:14:13: note: previous declaration of 'I2C_ClearADDRFlag' was here
+   14 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterSendData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:283:30: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  283 |  I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+      |                    ~~~~~~~~~~^~~~~~~
+      |                              |
+      |                              I2C_Reg_Def_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:39:45: note: expected 'I2C_Handle_t *' but argument is of type 'I2C_Reg_Def_t *'
+   39 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |                               ~~~~~~~~~~~~~~^~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:505:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  505 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:39:13: note: previous definition of 'I2C_ClearADDRFlag' was here
+   39 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:547:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  547 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:505:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  505 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:730:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  730 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:505:13: note: previous definition of 'I2C_ClearADDRFlag' was here
+  505 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:730:13: warning: 'I2C_ClearADDRFlag' defined but not used [-Wunused-function]
+  730 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+12:35:03 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+12:35:05 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:13: error: conflicting types for 'I2C_ClearADDRFlag'
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t  *pI2CHandle);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:14:13: note: previous declaration of 'I2C_ClearADDRFlag' was here
+   14 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx);
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterSendData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:283:30: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  283 |  I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+      |                    ~~~~~~~~~~^~~~~~~
+      |                              |
+      |                              I2C_Reg_Def_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:39:46: note: expected 'I2C_Handle_t *' but argument is of type 'I2C_Reg_Def_t *'
+   39 | static void I2C_ClearADDRFlag(I2C_Handle_t  *pI2CHandle )
+      |                               ~~~~~~~~~~~~~~~^~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:505:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  505 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:39:13: note: previous definition of 'I2C_ClearADDRFlag' was here
+   39 | static void I2C_ClearADDRFlag(I2C_Handle_t  *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:547:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  547 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:505:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  505 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:730:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  730 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:505:13: note: previous definition of 'I2C_ClearADDRFlag' was here
+  505 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:730:13: warning: 'I2C_ClearADDRFlag' defined but not used [-Wunused-function]
+  730 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+12:36:13 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+12:36:16 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterSendData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:283:30: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  283 |  I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+      |                    ~~~~~~~~~~^~~~~~~
+      |                              |
+      |                              I2C_Reg_Def_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:39:46: note: expected 'I2C_Handle_t *' but argument is of type 'I2C_Reg_Def_t *'
+   39 | static void I2C_ClearADDRFlag(I2C_Handle_t  *pI2CHandle )
+      |                               ~~~~~~~~~~~~~~~^~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:505:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  505 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:39:13: note: previous definition of 'I2C_ClearADDRFlag' was here
+   39 | static void I2C_ClearADDRFlag(I2C_Handle_t  *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_EV_IRQHandling':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:547:22: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  547 |    I2C_ClearADDRFlag(pI2CHandle);
+      |                      ^~~~~~~~~~
+      |                      |
+      |                      I2C_Handle_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:505:46: note: expected 'I2C_Reg_Def_t *' but argument is of type 'I2C_Handle_t *'
+  505 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |                               ~~~~~~~~~~~~~~~^~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:730:13: error: conflicting types for 'I2C_ClearADDRFlag'
+  730 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:505:13: note: previous definition of 'I2C_ClearADDRFlag' was here
+  505 | static void I2C_ClearADDRFlag(I2C_Reg_Def_t *pI2Cx){
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:730:13: warning: 'I2C_ClearADDRFlag' defined but not used [-Wunused-function]
+  730 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+12:39:32 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+12:39:37 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterSendData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:283:30: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  283 |  I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+      |                    ~~~~~~~~~~^~~~~~~
+      |                              |
+      |                              I2C_Reg_Def_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:39:46: note: expected 'I2C_Handle_t *' but argument is of type 'I2C_Reg_Def_t *'
+   39 | static void I2C_ClearADDRFlag(I2C_Handle_t  *pI2CHandle )
+      |                               ~~~~~~~~~~~~~~~^~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c: At top level:
+..\Drivers\Src\stm32f429zi_i2c_driver.c:721:13: error: redefinition of 'I2C_ClearADDRFlag'
+  721 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:39:13: note: previous definition of 'I2C_ClearADDRFlag' was here
+   39 | static void I2C_ClearADDRFlag(I2C_Handle_t  *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+..\Drivers\Src\stm32f429zi_i2c_driver.c:721:13: warning: 'I2C_ClearADDRFlag' defined but not used [-Wunused-function]
+  721 | static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
+      |             ^~~~~~~~~~~~~~~~~
+12:40:41 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Nothing to clean.
+12:40:46 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+..\Drivers\Src\stm32f429zi_i2c_driver.c: In function 'I2C_MasterSendData':
+..\Drivers\Src\stm32f429zi_i2c_driver.c:241:30: warning: passing argument 1 of 'I2C_ClearADDRFlag' from incompatible pointer type [-Wincompatible-pointer-types]
+  241 |  I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
+      |                    ~~~~~~~~~~^~~~~~~
+      |                              |
+      |                              I2C_Reg_Def_t *
+..\Drivers\Src\stm32f429zi_i2c_driver.c:15:46: note: expected 'I2C_Handle_t *' but argument is of type 'I2C_Reg_Def_t *'
+   15 | static void I2C_ClearADDRFlag(I2C_Handle_t  *pI2CHandle);
+      |                               ~~~~~~~~~~~~~~~^~~~~~~~~~
+12:42:02 **** Cleaning Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+Debug/Drivers/Src/stm32f429zi_i2c_driver.o deleted.
+Debug/Drivers/Src/stm32f429zi_i2c_driver.su deleted.
+12:42:07 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 
+12:42:15 **** Building Selected Files of configuration Debug for project stm32f429zi_drivers ****
+Info: Internal Builder is used for build
+arm-none-eabi-gcc "..\\Drivers\\Src\\stm32f429zi_i2c_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F429I_DISC1 -DSTM32 -DSTM32F429ZITx -DSTM32F4 -c "-IC:\\Users\\pc\\Documents\\GitHub\\Driver-Development-STM32F429ZI\\stm32f429zi_drivers\\Drivers\\Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers\\Src\\stm32f429zi_i2c_driver.o" 

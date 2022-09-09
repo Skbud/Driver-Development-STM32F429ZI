@@ -8,35 +8,11 @@
 #include "STM32F429ZI.h"
 #include "stm32f429zi_I2C_driver.h"
 static void 	I2C_ExecuteAddressPhase(I2C_Reg_Def_t	*pI2Cx, uint8_t SlaveAddr);
-static void I2C_ExecuteAddressPhaseWrite(I2C_Reg_Def_t *pI2Cx, uint8_t SlaveAddr);
-static void I2C_ExecuteAddressPhaseRead(I2C_Reg_Def_t *pI2Cx, uint8_t SlaveAddr);
 static void I2C_GenerateStartCondition(I2C_Reg_Def_t	*pI2Cx);
-//static void I2C_ClearADDRFlag(I2C_Reg_Def_t	*pI2Cx);
-static void I2C_ClearADDRFlag(I2C_Handle_t  *pI2CHandle);
+static void I2C_ClearADDRFlag(I2C_Reg_Def_t	*pI2Cx);
 static void I2C_GenerateStopCondition(I2C_Reg_Def_t	*pI2Cx);
-static void I2C_MasterHandleRXNEInterrupt(I2C_Handle_t *pI2CHandle );
-static void I2C_MasterHandleTXEInterrupt(I2C_Handle_t *pI2CHandle );
 uint16_t AHB_PreScalar[8]={2,4,8,16,64,128,256,512};
 uint16_t APB1_PreScalar[4]={2,4,8,16};
-
-
-static void I2C_ExecuteAddressPhaseWrite(I2C_Reg_Def_t *pI2Cx, uint8_t SlaveAddr)
-{
-	SlaveAddr = SlaveAddr << 1;
-	SlaveAddr &= ~(1); //SlaveAddr is Slave address + r/nw bit=0
-	pI2Cx->DR = SlaveAddr;
-}
-
-
-static void I2C_ExecuteAddressPhaseRead(I2C_Reg_Def_t *pI2Cx, uint8_t SlaveAddr)
-{
-	SlaveAddr = SlaveAddr << 1;
-	SlaveAddr |= 1; //SlaveAddr is Slave address + r/nw bit=1
-	pI2Cx->DR = SlaveAddr;
-}
-
-
-
 /***********************************************************************************************
  * @Function:							-RCC_GetPCLK1Value
  * @Description:						-returns the clock frequency for the peripheral
@@ -238,7 +214,7 @@ void I2C_MasterSendData(I2C_Handle_t *pI2CHandle, uint8_t *pTxBuffer, uint32_t L
 	I2C_ExecuteAddressPhase(pI2CHandle->pI2Cx,SlaveAddr);
 
 	//Confirm if address phase is completed
-	I2C_ClearADDRFlag(pI2CHandle);
+	I2C_ClearADDRFlag(pI2CHandle->pI2Cx);
 
 	//Send Data until Len becomes zero
 	while(Len>0)
@@ -460,6 +436,15 @@ static void 	I2C_ExecuteAddressPhase(I2C_Reg_Def_t	*pI2Cx, uint8_t SlaveAddr){
 	pI2Cx->DR=SlaveAddr;
 }
 
+static void I2C_ClearADDRFlag(I2C_Reg_Def_t	*pI2Cx){
+	/*
+	 * Note: ADDR Flag is cleared by software reading SR1 register followed reading SR2, or by hardware
+when PE=0.
+	 */
+uint32_t dummyRead=pI2Cx->SR1;
+ dummyRead=pI2Cx->CR2;
+(void)dummyRead; //To overcome unused variable warning
+}
 
 void I2C_EV_IRQHandling(I2C_Handle_t *pI2CHandle){
 	//Interrupt handling for both master and slave mode of a device
@@ -675,104 +660,3 @@ void I2C_ER_IRQHandling(I2C_Handle_t *pI2CHandle){
 		}
 
 }
-
-static void I2C_ClearADDRFlag(I2C_Handle_t *pI2CHandle )
-{
-	uint32_t dummy_read;
-	//check for device mode
-	if(pI2CHandle->pI2Cx->SR2 & ( 1 << I2C_SR2_MSL))
-	{
-		//device is in master mode
-		if(pI2CHandle->TxRxState == I2C_BUSY_IN_RX)
-		{
-			if(pI2CHandle->RxSize  == 1)
-			{
-				//first disable the ack
-				I2C_ManageAcking(pI2CHandle->pI2Cx,DISABLE);
-
-				//clear the ADDR flag ( read SR1 , read SR2)
-				dummy_read = pI2CHandle->pI2Cx->SR1;
-				dummy_read = pI2CHandle->pI2Cx->SR2;
-				(void)dummy_read;
-			}
-
-		}
-		else
-		{
-			//clear the ADDR flag ( read SR1 , read SR2)
-			dummy_read = pI2CHandle->pI2Cx->SR1;
-			dummy_read = pI2CHandle->pI2Cx->SR2;
-			(void)dummy_read;
-
-		}
-
-	}
-	else
-	{
-		//device is in slave mode
-		//clear the ADDR flag ( read SR1 , read SR2)
-		dummy_read = pI2CHandle->pI2Cx->SR1;
-		dummy_read = pI2CHandle->pI2Cx->SR2;
-		(void)dummy_read;
-	}
-
-}
-	static void I2C_MasterHandleRXNEInterrupt(I2C_Handle_t *pI2CHandle )
-	{
-		//We have to do the data reception
-		if(pI2CHandle->RxSize == 1)
-		{
-			*pI2CHandle->pRxBuffer = pI2CHandle->pI2Cx->DR;
-			pI2CHandle->RxLen--;
-
-		}
-
-
-		if(pI2CHandle->RxSize > 1)
-		{
-			if(pI2CHandle->RxLen == 2)
-			{
-				//clear the ack bit
-				I2C_ManageAcking(pI2CHandle->pI2Cx,DISABLE);
-			}
-
-				//read DR
-				*pI2CHandle->pRxBuffer = pI2CHandle->pI2Cx->DR;
-				pI2CHandle->pRxBuffer++;
-				pI2CHandle->RxLen--;
-		}
-
-		if(pI2CHandle->RxLen == 0 )
-		{
-			//close the I2C data reception and notify the application
-
-			//1. generate the stop condition
-			if(pI2CHandle->Sr == I2C_DISABLE_SR)
-				I2C_GenerateStopCondition(pI2CHandle->pI2Cx);
-
-			//2 . Close the I2C rx
-			I2C_CloseReceiveData(pI2CHandle);
-
-			//3. Notify the application
-			I2C_ApplicationEventCallback(pI2CHandle,I2C_EV_RX_CMPLT);
-		}
-	}
-
-
-	static void I2C_MasterHandleTXEInterrupt(I2C_Handle_t *pI2CHandle )
-	{
-
-		if(pI2CHandle->TxLen > 0)
-		{
-			//1. load the data in to DR
-			pI2CHandle->pI2Cx->DR = *(pI2CHandle->pTxBuffer);
-
-			//2. decrement the TxLen
-			pI2CHandle->TxLen--;
-
-			//3. Increment the buffer address
-			pI2CHandle->pTxBuffer++;
-
-		}
-
-	}
