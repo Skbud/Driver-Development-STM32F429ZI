@@ -1,6 +1,8 @@
 "./Drivers/Src/stm32f429zi_gpio_driver.o"
 "./Drivers/Src/stm32f429zi_i2c_driver.o"
+"./Drivers/Src/stm32f429zi_rcc_driver.o"
 "./Drivers/Src/stm32f429zi_spi_driver.o"
+"./Drivers/Src/stm32f429zi_usart_driver.o"
 "./Src/main.o"
 "./Src/syscalls.o"
 "./Src/sysmem.o"
